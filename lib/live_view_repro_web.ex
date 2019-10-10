@@ -23,6 +23,8 @@ defmodule LiveViewReproWeb do
 
       import Plug.Conn
       import LiveViewReproWeb.Gettext
+      import Phoenix.LiveView.Controller
+
       alias LiveViewReproWeb.Router.Helpers, as: Routes
     end
   end
@@ -41,6 +43,18 @@ defmodule LiveViewReproWeb do
 
       import LiveViewReproWeb.ErrorHelpers
       import LiveViewReproWeb.Gettext
+
+      import Phoenix.LiveView,
+        only: [
+          live_render: 2,
+          live_render: 3,
+          live_link: 1,
+          live_link: 2,
+          live_component: 2,
+          live_component: 3,
+          live_component: 4
+        ]
+
       alias LiveViewReproWeb.Router.Helpers, as: Routes
     end
   end
@@ -50,6 +64,7 @@ defmodule LiveViewReproWeb do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
+      import Phoenix.LiveView.Router
     end
   end
 
