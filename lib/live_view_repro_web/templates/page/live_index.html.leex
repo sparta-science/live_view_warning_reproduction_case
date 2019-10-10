@@ -1,0 +1,9 @@
+<table>
+  <%= for thing <- @things do %>
+    <tr>
+      <%= if true do %>
+        <td><%= thing |> inspect() %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
